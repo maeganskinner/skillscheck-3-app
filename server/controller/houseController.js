@@ -1,9 +1,7 @@
-Function addHouset(req, res) {
-    const { name, price, image,
-address,
-    city = "city",
-    state = "state",
-    zipcode = "zipcode" } = req.body;
+
+
+Function addHouse(req, res) {
+    const { name, price, image, address, city, state, zipcode} = req.body;
     const db = req.app.get("db");
     db.addHouse(name, price, image).then(response => {
         console.log(response);
@@ -11,34 +9,26 @@ address,
     })
 }
 
-function getProduct(req, res) {
+function getHouse(req, res) {
     const db = req.app.get("db");
-    if (req.query.product !== undefined) {
-        db.getProduct.req.query.name).then(response => {
+    if (req.query.house !== undefined) {
+        db.getHouse.req.query.name).then(response => {
             res.status(200).json(response);
         })
     }
 }
-function deleteProduct(req, res) {
+function deleteHouse(req, res) {
     const db = req.app.get("db");
     if (req.query.product !== undefined) {
-        db.deleteProduct.req.query.name).then(response => {
-            res.status(200).json(response);
-        })
-    }
-}
-function editProduct(req, res) {
-    const db = req.app.get("db");
-    if (req.query.product !== undefined) {
-        db.editProduct.req.query.name).then(response => {
+        db.deleteHouse.req.query.name).then(response => {
             res.status(200).json(response);
         })
     }
 }
 
+
 module.exports = {
-    getProduct,
-    addProduct,
-    deleteProduct,
-    editProduct
+    getHouse,
+    addHouse,
+    deleteHouse,
 }

@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import { Switch, Route, Component} from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
-import Routes from './components/Routes';
+import Dashboard from './components/Dashboard';
+import House from './components/House';
+import Wizard from './components/Wizard';
+
 
 
 

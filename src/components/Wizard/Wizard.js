@@ -28,6 +28,10 @@ class Wizard extends React.Component {
           <h2>{this.props.name}</h2>
           <button
 
+          <button onClick={() => this.setState({ section: "cancel" })}>
+          cancel
+        </button>
+
             onClick={e => {
               e.stopPropagation();
               Axios.delete(`/api/houses/${this.props.index}`).then(response => {
